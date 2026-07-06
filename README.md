@@ -1,3 +1,5 @@
+<img src="assets/logo.png" alt="Broadlink" height="48">
+
 # broadlink6
 
 IPv6-capable client for Broadlink RM-series devices (RM4 mini/pro framing).

@@ -40,7 +40,9 @@ class BroadlinkRemote(RemoteEntity):
 
     async def async_send_command(self, command: Iterable[str], **kwargs) -> None:
         if not self._attr_is_on:
-            return
+            raise ServiceValidationError(
+                "the remote is turned off; turn it on to send commands"
+            )
 
         packets = [self._decode(item) for item in command]
         repeats = kwargs.get(ATTR_NUM_REPEATS, 1)
