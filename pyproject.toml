@@ -1,0 +1,17 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "broadlink6"
+version = "0.1.0"
+description = "IPv6-capable client for Broadlink RM-series devices"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["cryptography"]
+
+[dependency-groups]
+dev = ["pytest"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/broadlink6"]
