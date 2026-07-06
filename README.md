@@ -24,3 +24,18 @@ device.send_pulses([4350, 4350, 550, 1550, 550, 550])
 
 The protocol layout follows the reference implementation in
 [python-broadlink](https://github.com/mjg59/python-broadlink) (MIT).
+
+## Home Assistant integration
+
+`custom_components/broadlink6/` wraps the library as a hub integration: one
+config entry per physical device (configured by host), registering the device
+with three entities — a `remote` that transmits raw Broadlink packets via
+`remote.send_command` with `b64:`-prefixed base64 codes, and the built-in
+temperature and humidity sensors, polled once a minute.
+
+Appliance logic does not belong here: integrations modeling the equipment
+behind the infrared (such as [ha-elios](https://github.com/afrigon/ha-elios))
+drive the remote entity through its service interface.
+
+Install by copying `custom_components/broadlink6/` into the Home Assistant
+configuration directory, or as a HACS custom repository.

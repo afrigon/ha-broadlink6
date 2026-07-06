@@ -1,0 +1,18 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Address of the Broadlink device. On an IPv6-only network, use the NAT64-synthesized address of its IPv4 reservation.",
+        "data": {
+          "host": "Host"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot reach the device."
+    },
+    "abort": {
+      "already_configured": "Device is already configured"
+    }
+  }
+}
