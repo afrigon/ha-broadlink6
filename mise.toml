@@ -2,7 +2,7 @@
 lockfile = true
 
 [tools]
-uv = "0"
+uv = "0.12"
 
 [tasks.build]
 description = "Build the distribution packages"
